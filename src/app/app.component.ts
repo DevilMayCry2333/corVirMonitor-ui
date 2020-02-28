@@ -25,11 +25,11 @@ export class AppComponent {
   dataSource=[];
 
   constructor(private http: HttpClient){
-
+    
   }
   ngOnInit(){
     console.log("hello");
-    this.http.get("https://youkaiyu.com:8443/").subscribe((res:PeriodicElement)=>{
+    this.http.get<PeriodicElement>("https://youkaiyu.com:8443/").subscribe((res)=>{
       ELEMENT_DATA.push(res);
       this.dataSource = ELEMENT_DATA;
       console.log(this.dataSource);
