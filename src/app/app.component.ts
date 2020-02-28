@@ -6,6 +6,7 @@ export interface PeriodicElement {
   currentConfirmedCount: number;
   confirmedCount: number;
   curedCount: string;
+  suspectedCount: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -20,7 +21,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Injectable()
 export class AppComponent {
   title = 'hello';
-  displayedColumns: string[] = ['cityName', 'currentConfirmedCount', 'confirmedCount', 'curedCount'];
+  displayedColumns: string[] = ['cityName', 'currentConfirmedCount', 'confirmedCount', 'curedCount','suspectedCount'];
   dataSource=[];
 
   constructor(private http: HttpClient){
